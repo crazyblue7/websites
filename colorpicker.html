@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>colorpicker</title>
+  </head>
+  <body>
+    <title>color picker!</title>
+    <input type="color" id="colorpicker">
+    <button onclick="copycolor();">copy color</button>
+    <p id="alert"></p>
+  </body>
+  <script>
+    async function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms*1000));
+    }
+    async function copycolor() {
+      let color = document.getElementById("colorpicker").value;
+      navigator.clipboard.writeText(color);
+      let alerty = document.getElementById("alert");
+      alerty.innerHTML = "copied!";
+      await sleep(2);
+      alerty.innerHTML = ":3";
+    }
+  </script>
+</html>
