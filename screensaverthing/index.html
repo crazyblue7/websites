@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>ScreenSaverThing</title>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+	<div id="o">
+		<img id="e" src="drawingBG.png">
+	</div>
+</body>
+<script>
+
+	let img = document.getElementById("e");
+	let d = document.getElementById("o");
+	let rotation = 0;
+	function fullscreen() {
+		if (!document.fullscreenElement) {
+			document.documentElement.requestFullscreen();
+		} else {
+			document.exitFullscreen();
+		}
+	}
+	function uh() {
+		if ( d.clientWidth > d.clientHeight ) {
+			img.width  = d.clientHeight/2;
+			img.height = d.clientHeight/2;
+			img.style.marginLeft = (d.clientWidth/2  - d.clientHeight/4) + "px";
+			img.style.marginTop  = (d.clientHeight/2 - d.clientHeight/4) + "px";
+		} else {
+			img.width  = d.clientWidth/2;
+			img.height = d.clientWidth/2;
+			img.style.marginLeft = (d.clientWidth/2  - d.clientWidth/4) + "px";
+			img.style.marginTop  = (d.clientHeight/2 - d.clientWidth/4) + "px";
+		}
+		addEventListener("click", (event) => { })
+
+		onclick = (event) => {fullscreen();}
+		rotation += 1
+		img.style.rotate = rotation + "deg";
+	}
+	setInterval(uh, 10);
+
+</script>
+
+</html>
