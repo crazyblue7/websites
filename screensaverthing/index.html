@@ -12,14 +12,19 @@
 </body>
 <script>
 
+	import NoSleep from 'nosleep.js';
+	var noSleep = new NoSleep();
+
 	let img = document.getElementById("e");
 	let d = document.getElementById("o");
 	let rotation = 0;
 	function fullscreen() {
 		if (!document.fullscreenElement) {
 			document.documentElement.requestFullscreen();
+			noSleep.enable();
 		} else {
 			document.exitFullscreen();
+			noSleep.disable();
 		}
 	}
 	function uh() {
@@ -36,7 +41,7 @@
 		}
 		addEventListener("click", (event) => { })
 
-		onclick = (event) => {fullscreen();}
+		onclick = (event) => {fullscreen(); }
 		rotation += 1
 		img.style.rotate = rotation + "deg";
 	}

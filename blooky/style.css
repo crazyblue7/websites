@@ -1,0 +1,20 @@
+@font-face {
+	font-family: font;
+	src: url(https://crazyblue7.github.io/websites/font.ttf);
+}
+html {
+	color: #fff;
+	background-color: #002B6F;
+	font-family: font;
+}
+body {
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#bar { 
+	background-color: #004AC2;
+}
+label {
+	font-size: 30px;
