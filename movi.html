@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>movie selection</title>
+</head>
+<body>
+	<h1>use imdb to find the code thingy</h1>
+	<p>it should be like tt00000000 but with different numbers</p>
+	<p>its in the url</p>
+	<br>
+	<p>put here the code:</p>
+	<input type="text" id="cody">
+	<button type="submit" id="buttony" onclick="sub(0);">submit</button>
+	<button type="submit" id="buttony" onclick="sub(1);">fullscreen</button>
+	<div id="prev" width="700" height="500">
+	</div>
+</body>
+<script>
+
+// Source - https://stackoverflow.com/a/175787
+// Posted by Dan, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-08-23, License - CC BY-SA 4.0
+
+function isNumeric(str) {
+  if (typeof str != "string") return false // we only process strings!  
+  return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
+         !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+}
+
+	function sub(num) {
+		let text = document.getElementById("cody").value;
+		let div  = document.getElementById("prev");
+		console.log(text);
+		if ( text.length != 10 ) {
+			return;
+		}
+		if ( text[0] != "t" || text[1] != "t" ) {
+			return;
+		}
+		console.log("e");
+		if ( !isNumeric(text[2]) ) { return; }
+		if ( !isNumeric(text[3]) ) { return; }
+		if ( !isNumeric(text[4]) ) { return; }
+		if ( !isNumeric(text[5]) ) { return; }
+		if ( !isNumeric(text[6]) ) { return; }
+		if ( !isNumeric(text[7]) ) { return; }
+		if ( !isNumeric(text[8]) ) { return; }
+		if ( !isNumeric(text[9]) ) { return; }
+		if ( num == 1 ) {
+			window.location.href = "https://vsembed.ru/embed/movie/"+text;
+		}
+		div.innerHTML = '<iframe src="https://vsembed.ru/embed/movie/'+text+'" width="700" height="500">e</iframe>';
+	}
+
+</script>
+
+</html>
