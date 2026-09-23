@@ -20,6 +20,14 @@ function uh(event) {
 	hand.style.rotate     = (-45+mmx/2-mmy/2) + "deg";
 	// image is 1540x4096
 }
+function fullscreen() {
+	if (!document.fullscreenElement) {
+		document.documentElement.requestFullscreen();
+	} else {
+		document.exitFullscreen();
+	}
+}
 hand.style.position = "fixed";
 hand.style.rotate   = (-45+mmx/2) + "deg";
 document.getElementById("hi").addEventListener("mousemove", uh);
+document.getElementById("hi").addEventListener("click", fullscreen);
